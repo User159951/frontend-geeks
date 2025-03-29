@@ -19,12 +19,35 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 space-y-4">
-      <h2 className="text-xl font-bold">Connexion</h2>
-      <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-2 border" required />
-      <input type="password" placeholder="Mot de passe" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-2 border" required />
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Se connecter</button>
-    </form>
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+    >
+      <form onSubmit={handleSubmit} className="max-w-md w-full space-y-4 bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-bold text-center">Connexion</h2>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-md"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Mot de passe"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-md"
+          required
+        />
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        >
+          Se connecter
+        </button>
+      </form>
+    </div>
   );
 };
 
