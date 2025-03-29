@@ -1,10 +1,13 @@
 {
+  "homepage": "https://User159951.github.io/frontend-geeks",
   "name": "front",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^1.8.4",
@@ -14,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
+    "gh-pages": "^6.3.0",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
     "vitawind": "^2.0.0",
