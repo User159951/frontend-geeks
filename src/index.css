@@ -4,8 +4,10 @@
 
 body {
   background-image: url('https://plus.unsplash.com/premium_photo-1684581214880-2043e5bc8b8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover; /* Ensure the image covers the viewport without exceeding */
+  background-position: center; /* Position the image at the center */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  background-attachment: scroll; /* Image scrolls with the page (no fixed position) */
+  margin: 0; /* Remove default margin to ensure no overflow */
+  flex-direction: column;
 }
