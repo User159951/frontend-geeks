@@ -10,7 +10,7 @@ const CreatePost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('/posts', { title, content })
-      .then(() => navigate('/dashboard'))
+      .then(() => navigate('/'))
       .catch(err => console.error(err));
   };
 

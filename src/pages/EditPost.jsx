@@ -20,17 +20,46 @@ const EditPost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.put(`/posts/${id}`, { title, content })
-      .then(() => navigate('/dashboard'))
+      .then(() => navigate('/'))
       .catch(err => console.error(err));
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-8 space-y-4">
-      <h2 className="text-xl font-bold">Modifier le blog</h2>
-      <input type="text" value={title} onChange={e => setTitle(e.target.value)} className="w-full p-2 border" required />
-      <textarea value={content} onChange={e => setContent(e.target.value)} className="w-full p-2 border h-40" required />
-      <button type="submit" className="bg-yellow-600 text-white px-4 py-2 rounded">Mettre à jour</button>
-    </form>
+    <div className="flex justify-center items-center min-h-screen px-4">
+      <form 
+        onSubmit={handleSubmit} 
+        className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg"
+      >
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Modifier le blog</h2>
+
+        {/* Title Input */}
+        <input 
+          type="text" 
+          value={title} 
+          onChange={e => setTitle(e.target.value)} 
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 mb-4"
+          placeholder="Titre du blog"
+          required
+        />
+
+        {/* Content Input */}
+        <textarea 
+          value={content} 
+          onChange={e => setContent(e.target.value)} 
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 mb-4 h-40"
+          placeholder="Contenu du blog"
+          required
+        />
+
+        {/* Submit Button */}
+        <button 
+          type="submit" 
+          className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+        >
+          Mettre à jour
+        </button>
+      </form>
+    </div>
   );
 };
 
