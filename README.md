@@ -1,4 +1,4 @@
-# blog-frontend
+# front
 
 - **template of:** vite + react
 - **tailwindcss:** v3.x
