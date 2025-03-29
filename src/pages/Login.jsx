@@ -10,14 +10,18 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Reset error before submitting
+    setError('');
 
     try {
       const res = await axios.post('/auth/login', { email, password });
+
+      // ✅ Stocker le token et l'utilisateur dans le localStorage
       localStorage.setItem('token', res.data.token);
+      localStorage.setItem('user', JSON.stringify(res.data.user)); // AJOUT IMPORTANT
+
       navigate('/dashboard');
     } catch (err) {
-      setError('Email ou mot de passe incorrect. Veuillez réessayer.'); // Display error message
+      setError('Email ou mot de passe incorrect. Veuillez réessayer.');
       console.error(err);
     }
   };
@@ -32,7 +36,7 @@ const Login = () => {
 
         {error && (
           <div className="text-red-500 text-sm text-center">
-            {error} {/* Display error message */}
+            {error}
           </div>
         )}
 
@@ -63,7 +67,6 @@ const Login = () => {
           Tu n'as pas de compte ?
         </p>
         
-        {/* Button to navigate to the registration page */}
         <button
           type="button"
           onClick={() => navigate('/register')}
