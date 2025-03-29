@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import "./index.css";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
@@ -17,6 +17,7 @@ import Blog from './pages/Blog';
 
 const App = () => {
   return (
+    
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -50,5 +51,6 @@ const App = () => {
     </BrowserRouter>
   );
 };
+
 
 export default App;
